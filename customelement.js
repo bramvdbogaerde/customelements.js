@@ -111,25 +111,4 @@ class CustomElement extends HTMLElement{
 	}
 }
 
-class WebSocketProvider extends CustomElement{
-	createdCallback(){
-		super.__init();
-
-		let i = 0;
-
-		setInterval(() => {
-			i += 1
-			this.set("onMessage", `New Message ${i}`)
-		},1000)
-	}
-}
-
-class ChatElement extends CustomElement{
-	createdCallback(){
-		super.template("#my-chat")
-		this.set("sender", "Bram")
-	}
-}
-
-document.registerElement("websocket-provider", WebSocketProvider)
-document.registerElement("my-chat", ChatElement)
+export default CustomElement
