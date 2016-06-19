@@ -109,7 +109,7 @@ class CustomElement extends HTMLElement{
 	* Attach an event listener to a class property
 	*
 	* @argument {String} property
-	*	@argument {Function} callback
+	* @argument {Function} callback
 	*/
 	bind(key, fn){
 		this.__callbackFunctions[key] = fn
