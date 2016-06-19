@@ -1,8 +1,9 @@
-class PlaceHolder extends CustomElement{	
+
+class PlaceHolder{  	
 	setValue(val){
 		this.textContent = val 
 	}
 
 }
 
-export default placeHolder
+export default PlaceHolder
