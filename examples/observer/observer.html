@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<title>Observable</title>
+	</head>
+	<body>
+		<customelements-http url="https://api.github.com/users" ></customelements-http>
+		<div id="response" ></div>
+		<script src="/http.min.js" ></script>
+		<script>
+			// This could be useful to be used with data from websockets for example
+			// Just for illustration we make a HTTP request and wait for the response
+			document.querySelector("customelements-http").stream.subscribe(function(data){
+			   document.querySelector("#response").textContent = data
+			});
+		</script>
+	   
+	</body>
+</html>
+
