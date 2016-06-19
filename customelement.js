@@ -1,3 +1,6 @@
+import Placeholder from "./elements/placeholder"
+document.registerElement("customelement-placeholder", Placeholder)
+
 /*
 * CustomElements.js
 * Minimal web components library
@@ -50,7 +53,7 @@ class CustomElement extends HTMLElement{
 			if(this.getAttribute(placeholder) == null){
 				continue
 			}
-			this.$.querySelector(`#ce-${placeholder}`).textContent = this.getAttribute(placeholder)
+			this.$.querySelector(`customelement-placeholder#ce-${placeholder}`).textContent = this.getAttribute(placeholder)
 		}
 	}
 
@@ -59,7 +62,7 @@ class CustomElement extends HTMLElement{
 
 		for(let placeholder of placeholders){
 			let name = placeholder.replace(/({{|}})/g,"")
-			this.$.innerHTML = this.$.innerHTML.replace(placeholder, `<span id="ce-${name}" ></span>`)
+			this.$.innerHTML = this.$.innerHTML.replace(placeholder, `<customelement-placeholder id="ce-${name}" ></customelement-placeholder>`)
 			this.__placeholderDictionary.push(name)
 		}
 	}
@@ -95,6 +98,7 @@ class CustomElement extends HTMLElement{
 		try{
 			this.$.querySelector("#ce-"+key).textContent = val
 		} catch(e){}
+
 
 		if(this.__callbackFunctions[key] != undefined)
 			this.__callbackFunctions[key](val)
